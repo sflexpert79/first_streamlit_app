@@ -13,7 +13,7 @@ streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text(' 🐔 Hard-Boiled Free-Range Egg')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇') 
 
-my_fruit_list = pandas.read_csv("https://urldefense.com/v3/__https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt__;!!OvrDrHA!UKc1B2FfXhVlNGuSIb3XCXa3KrdEEO7xRrz85rdyLfePBnNdiVBpXVFCVOt_-lsAVko0hnC1HPY$  ")
+my_fruit_list = pandas.read_csv("https://urldefense.com/v3/__https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt)
 
 my_fruit_list = my_fruit_list.set_index('Fruit')
 #streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Avocado','Strawberries'])
@@ -25,7 +25,7 @@ streamlit.dataframe(fruits_show)
 #New Section to display fruityvice api response
 #Create the repeatable code block (called function)
 def get_fruityvice_data(this_fruit_choice):
-     fruityvice_response = requests.get("https://urldefense.com/v3/__https://fruityvice.com/api/fruit/__;!!OvrDrHA!UKc1B2FfXhVlNGuSIb3XCXa3KrdEEO7xRrz85rdyLfePBnNdiVBpXVFCVOt_-lsAVko00h3pNq4$  "  + fruityvice_input )
+     fruityvice_response = requests.get("https://urldefense.com/v3/__https://fruityvice.com/api/fruit/" + fruityvice_input )
      fruityvice_normalize = pandas.json_normalize(fruityvice_response.json())
      return fruityvice_normalize
      #streamlit.dataframe(fruityvice_normalize)
